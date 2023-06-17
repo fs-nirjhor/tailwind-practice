@@ -1,9 +1,18 @@
-@tailwind base;
+@tailwind base; 
 @tailwind components;
 @tailwind utilities;
 
+/* 
+base -> h1, h2 (html tags)
+components -> .btn, .btn-green (customized class)
+utilities -> text-xs, p-3 (tailwind class) 
+*/
+
+@layer components {
+/* components */
 .btn {
-  @apply text-xs font-semibold p-2 mt-3 border-2 rounded-full hover:text-white  focus:ring-2 focus:ring-offset-2 focus:outline-0;
+  @apply text-xs font-semibold px-3 py-1 mt-3 border-2 rounded-full hover:text-white  focus:ring-2 focus:ring-offset-2 focus:outline-0;
+  @apply rounded-lg ;
 }
 
 .btn-purple {
@@ -12,4 +21,26 @@
 
 .btn-green {
   @apply btn text-green-600 dark:text-green-500 border-green-600 dark:border-green-500 hover:bg-green-600 focus:ring-green-600;
+}
+}
+
+@layer base {
+  h1 {
+    font-size: 20px;
+    font-weight: bolder;
+  }
+  h3 {
+    font-size: 15px;
+    font-weight: bold;
+  }
+}
+
+@layer utilities {
+  .fancy-text {
+    color: cyan;
+    font-family: cursive;
+  }
+  .my-gradiant {
+    background-image: linear-gradient(to left bottom, hsl(271, 91%, 65.1%), hsl(245, 57.9%, 50.6%), hsl(199, 88.7%, 48.4%));
+  }
 }
