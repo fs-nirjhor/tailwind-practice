@@ -532,8 +532,6 @@ h3 {
   --tw-backdrop-sepia:  ;
 }
 
-/* components */
-
 .btn {
   margin-top: 0.75rem;
   border-radius: 9999px;
@@ -756,16 +754,59 @@ h3 {
   transition-duration: 500ms;
 }
 
+/* @tailwind variants; */
+
+/* responsive for all breakpoint  */
+
+/* responsive for only included breakpoint */
+
+@media (min-width: 768px) {
+  .screen-bg {
+    background-color: #3b82f6;
+  }
+
+  .media-screen-bg {
+    background-color: #06b6d4;
+    padding: 0.625rem;
+  }
+}
+
+input::-moz-placeholder {
+  color: yellow;
+}
+
+input::placeholder {
+  color: yellow;
+}
+
 /* 
-base -> h1, h2 (html tags)
-components -> .btn, .btn-green (customized class)
-utilities -> text-xs, p-3 (tailwind class) 
+   Notes:
+1.base -> h1, h2 (html tags)
+2.components -> .btn, .btn-green (customized class)
+3.utilities -> text-xs, p-3 (tailwind class) 
+4.preference: utilities > components > base
+5."@variants" & "@responsive" directives are not neccessary. it'll automatically work into "@layer" directive in tailwind v3.
+6. darkMode: "media" is always active in tailwind v3
+7. "@screen sm" & "screen(sm)" are same. screen(sm) is better.
+8. "@responsive" make css for all breakpoint. "@screen" make css for only specific breakpoint 
+9. adding "@tailwind variants" on top will prevent "@layer" directive from making "@responsive & @variants" automatically.
+10. don't include "md:" , "sm:" before class of "@screen" & "@media screen()"
 */
 
 .hover\:scale-110:hover {
   --tw-scale-x: 1.1;
   --tw-scale-y: 1.1;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.hover\:text-fancy:hover {
+  color: cyan;
+  font-family: cursive;
+}
+
+.hover\:variants-chain:hover {
+  color: cyan;
+  letter-spacing: 10px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -812,5 +853,10 @@ utilities -> text-xs, p-3 (tailwind class)
     --tw-space-x-reverse: 0;
     margin-right: calc(1.25rem * var(--tw-space-x-reverse));
     margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
+  .md\:text-fancy {
+    color: cyan;
+    font-family: cursive;
   }
 }
