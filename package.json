@@ -1,9 +1,10 @@
 {
   "name": "tailwind-practice",
   "version": "1.0.0",
-  "main": "tailwind.config.js",
+  "main": "index.js",
   "scripts": {
-    "build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+    "build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "build-p" : "npx -i postcss ./src/input.css -o ./dist/output.css --w"
   },
   "keywords": [],
   "author": "",
@@ -11,5 +12,10 @@
   "description": "",
   "devDependencies": {
     "tailwindcss": "^3.3.2"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.24",
+    "postcss-cli": "^10.1.0"
   }
 }
