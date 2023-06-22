@@ -39,7 +39,7 @@
   }
 }
 
-/* @variants and @responsive not deprecataded from v3 */
+/* @variants and @responsive are deprecataded from v3 */
 /*
 @variants focus, hover, dark {
   .variants-chain {

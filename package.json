@@ -1,15 +1,15 @@
 {
   "name": "tailwind-practice",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "tailwind.config.js",
   "scripts": {
     "build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
     "build-p" : "npx -i postcss ./src/input.css -o ./dist/output.css --w"
   },
   "keywords": [],
-  "author": "",
+  "author": "FS Nirjhor",
   "license": "ISC",
-  "description": "",
+  "description": "Its a project for practice Tailwindcss",
   "devDependencies": {
     "tailwindcss": "^3.3.2"
   },
